@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    "syntax-trailing-function-commas",
+    "@babel/plugin-proposal-export-namespace-from"
+  ]
+}

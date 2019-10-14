@@ -1,0 +1,88 @@
+{
+  "name": "react-dual-theme",
+  "version": "0.0.1",
+  "description": "Theme context for React (Native) apps",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "yarn eslint .",
+    "build": "yarn lint && yarn build:babel && yarn build:flow && yarn build:typescript",
+    "build:babel": "rm -rf ./dist && yarn babel src/ -d dist",
+    "build:flow": "yarn flow-copy-source src dist",
+    "build:typescript": "yarn build:typescript:babel && yarn build:typescript:compile",
+    "build:typescript:babel": "yarn build:typescript:convert && yarn build:typescript:rename",
+    "build:typescript:convert": "rm -rf ./ts && yarn babel --plugins babel-plugin-flow-to-typescript src/ -d ts",
+    "build:typescript:rename": "find ts/ -type f -name '*.js' | awk '{print(\"mv \"$1\" \"$1)}' | sed 's/.js/.ts/2' | /bin/sh",
+    "build:typescript:compile": "yarn tsc --declaration && rm ./dist/index.ts",
+    "preversion": "yarn build",
+    "version:new-patch": "npm version patch",
+    "version:new-minor": "npm version minor",
+    "version:new-major": "npm version major",
+    "npm:publish:prepare": "yarn build && git push --tags",
+    "npm:publish:try": "git push --tags && npm publish --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attitude/react-dual-theme.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "theme",
+    "context",
+    "react-hook",
+    "theme-context",
+    "dark-mode",
+    "react-native",
+    "theme-provider",
+    "theming",
+    "useTheme"
+  ],
+  "author": "Martin Adamko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/attitude/react-native-theme/issues"
+  },
+  "homepage": "https://github.com/attitude/react-native-theme#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/runtime": "^7.6.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-flow-to-typescript": "^0.4.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+    "eslint": "^6.5.1",
+    "eslint-config-esnext": "^4.0.0",
+    "eslint-config-react-native": "^4.0.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-with-attitude": "^0.0.1",
+    "eslint-formatter-pretty": "^2.1.1",
+    "eslint-plugin-compat": "^3.3.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.19.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "eslint-plugin-react-native": "^3.7.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "flow-bin": "^0.109.0",
+    "flow-copy-source": "^2.0.8",
+    "react": "^16.10.2",
+    "typescript": "^3.6.4"
+  },
+  "peerDependencies": {
+    "react": "^16.10.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["es6"],
+    "jsx": "react-native",
+    "removeComments": true,
+    "outFile": "dist/index.ts",
+    "module": "system",
+    "moduleResolution": "node",
+    "declaration": true
+  },
+  "include": [
+    "ts/**/*"
+  ],
+  "exclude": [],
+}
