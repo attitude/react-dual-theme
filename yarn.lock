@@ -900,10 +900,10 @@ eslint-config-standard@^14.1.0:
   resolved "https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-14.1.0.tgz#b23da2b76fe5a2eba668374f246454e7058f15d4"
   integrity sha512-EF6XkrrGVbvv8hL/kYa/m6vnvmUT+K82pJJc4JJVMM6+Qgqh0pnwprSxdduDLB9p/7bIxD+YV5O0wfb8lmcPbA==
 
-eslint-config-with-attitude@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/eslint-config-with-attitude/-/eslint-config-with-attitude-0.0.1.tgz#1658274992d9b911e1c62ef689d371f55265ea5a"
-  integrity sha512-TWkHaQ2pc7n6aC7455bu8f85z3lsaJeONQXYBrAI+oyWOtbEdzeDBDhnrOYq+13XuRAyaeEQm2lhXdTUFB/0AA==
+eslint-config-with-attitude@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/eslint-config-with-attitude/-/eslint-config-with-attitude-0.0.3.tgz#8cd64b4e7fea3dd8fea826f7850f86a2d8755d4f"
+  integrity sha512-gphM0xz43IjcQlA99ieV+Ud2+GiB4NvbdQqwGJ2FuR+xfkuH/ANYkhJhRyzd9CxWscY/oDhdpCO56qw6x9A7Mg==
 
 eslint-formatter-pretty@^2.1.1:
   version "2.1.1"
