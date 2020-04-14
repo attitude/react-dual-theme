@@ -8,8 +8,8 @@
 import * as React from 'react'
 
 type Theme = {
-  light: string,
   dark: string,
+  light: string,
 }
 
 type ThemeContextType = [

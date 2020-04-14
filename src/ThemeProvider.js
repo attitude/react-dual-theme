@@ -10,11 +10,11 @@ import * as React from 'react'
 import { ThemeContext } from './ThemeContext'
 
 type ThemeProviderProps = $Exact<{
-  theme: string | [string, string],
   children: React.Node,
+  theme: string | [string, string],
 }>
 
-export function ThemeProvider ({ theme, children }: ThemeProviderProps) {
+export function ThemeProvider ({ children, theme }: ThemeProviderProps) {
   const light = typeof theme === 'string' ? theme : theme[0]
   const dark = typeof theme === 'string' ? theme : theme[1]
 
