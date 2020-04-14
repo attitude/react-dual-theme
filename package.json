@@ -24,8 +24,8 @@
     "version:new-patch": "npm version patch",
     "version:new-minor": "npm version minor",
     "version:new-major": "npm version major",
-    "npm:publish:prepare": "yarn build && git push --tags",
-    "npm:publish:try": "git push --tags && npm publish --dry-run"
+    "npm:publish:prepare": "yarn build && git push && git push --tags",
+    "npm:publish:try": "yarn npm:publish:prepare && npm publish --dry-run"
   },
   "repository": {
     "type": "git",
