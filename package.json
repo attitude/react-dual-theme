@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "audit:fix": "npm i --package-lock-only && npm audit fix && rm yarn.lock && yarn import && rm package-lock.json && git add yarn.lock git commit -m 'Dependency audit fix' && rm -rf ./node_modules && yarn",
     "lint": "yarn eslint .",
     "build": "yarn lint && yarn build:babel && yarn build:flow && yarn build:typescript",
     "build:babel": "rm -rf ./dist && yarn babel src/ -d dist",
@@ -25,7 +25,8 @@
     "version:new-minor": "npm version minor",
     "version:new-major": "npm version major",
     "npm:publish:prepare": "yarn build && git push && git push --tags",
-    "npm:publish:try": "yarn npm:publish:prepare && npm publish --dry-run"
+    "npm:publish:try": "yarn npm:publish:prepare && npm publish --dry-run",
+    "npm:publish": "yarn npm:publish:prepare && npm publish"
   },
   "repository": {
     "type": "git",
