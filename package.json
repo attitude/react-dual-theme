@@ -1,6 +1,6 @@
 {
   "name": "react-dual-theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Theme context for React (Native) apps",
   "main": "dist/index.js",
   "module": "src/index.js",
